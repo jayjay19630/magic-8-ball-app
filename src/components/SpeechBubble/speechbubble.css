@@ -1,0 +1,25 @@
+.speech-bubble {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .bubble-text {
+        width: 700px;
+        height: 80px;
+        background-color: rgb(173, 208, 238);
+        border: 8px solid rgb(173, 208, 238);
+        border-radius: 20px;
+        color: black;
+        font-size: large;
+    }
+    
+    .bubble-tail {
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-top: 50px solid rgb(173, 208, 238);
+    }
+
+

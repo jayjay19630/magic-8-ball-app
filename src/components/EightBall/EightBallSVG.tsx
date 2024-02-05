@@ -2,14 +2,14 @@ import { motion } from "framer-motion"
 
 const EightBallSVG = () => (
   <motion.svg
-    animate={{y: [-50, 0, -50]}}
-        transition={{
-            times: [0, 1],
-            duration: 5,
-            repeat: Infinity,
-            type: "keyframes",
-            ease: "easeInOut"
-        }}  
+    animate={{y: [-40, 0, -40]}}
+    transition={{
+        times: [0, 1],
+        duration: 5,
+        repeat: Infinity,
+        type: "keyframes",
+        ease: "easeInOut"
+    }}  
     xmlns="http://www.w3.org/2000/svg"
     height={300}
     width={300}

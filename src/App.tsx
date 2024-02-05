@@ -1,13 +1,17 @@
 import './App.css'
-import EightBallSVG from './components/EightBallSVG';
-import { Heading } from './components/Heading';
+import EightBallSVG from './components/EightBall/EightBallSVG';
+import { Heading } from './components/Heading/Heading';
+import { SpeechBubble } from './components/SpeechBubble/SpeechBubble';
 
 function App() {
   
   return (
     <div className='home'>
       <Heading/>
-      <EightBallSVG />
+      <div className='ball-container'>
+        <SpeechBubble response={''}/>
+        <EightBallSVG />
+      </div>
     </div>
   )
 }

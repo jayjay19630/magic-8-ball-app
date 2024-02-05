@@ -1,4 +1,4 @@
-import '../styles/heading.css'
+import './heading.css'
 
 export const Heading = () => {
     return (

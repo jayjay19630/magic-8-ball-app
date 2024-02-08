@@ -10,6 +10,7 @@ function App() {
   
   const [response, setResponse] = useState('Ask me a yes or no question!');
   const [isShaking, setIsShaking] = useState(false);
+  console.log(isShaking);
   const [query, setQuery] = useState('');
 
   return (

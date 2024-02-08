@@ -20,4 +20,4 @@ To get a local copy up and running, note the prerequisites and follow these step
 4. Run `cd magic-8-ball-app`
 5. Run `npm install`
 7. Run `npm run dev`
-8. Head over to http://localhost:5174/ to see the 8 ball in action!
+8. Head over to http://localhost:5173/ to see the 8 ball in action!

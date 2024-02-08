@@ -1,4 +1,4 @@
-import { Button, Icon, Stack, TextField } from '@mui/material';
+import { Button, Stack, TextField } from '@mui/material';
 import './UserInput.css'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { QuestionAnswer } from '@mui/icons-material';
@@ -7,12 +7,13 @@ interface IUserInput {
     query: string
   }
 
-export const UserInput = (props: { setResponse: Function }) => {
+export const UserInput = (props: { setQuery: Function, setIsShaking: Function }) => {
 
     const { register, handleSubmit, formState: { errors }} = useForm<IUserInput>();
 
     const handleQuerySubmit: SubmitHandler<IUserInput> = (data: {query: string}) => {
-        props.setResponse(data.query);
+        props.setQuery(data.query);
+        props.setIsShaking(true);
     }
 
     return (
@@ -31,6 +32,5 @@ export const UserInput = (props: { setResponse: Function }) => {
                 </Button>
             </Stack>
         </form>
-        
     )
 }

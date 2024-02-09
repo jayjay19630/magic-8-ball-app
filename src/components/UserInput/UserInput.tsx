@@ -7,13 +7,13 @@ interface IUserInput {
     query: string
   }
 
-export const UserInput = (props: { setQuery: Function, setIsShaking: Function }) => {
+export const UserInput = (props: { setIsShaking: Function, fetchQuery: Function }) => {
 
     const { register, handleSubmit, formState: { errors }} = useForm<IUserInput>();
 
     const handleQuerySubmit: SubmitHandler<IUserInput> = (data: {query: string}) => {
-        props.setQuery(data.query);
         props.setIsShaking(true);
+        props.fetchQuery(data.query);
     }
 
     return (

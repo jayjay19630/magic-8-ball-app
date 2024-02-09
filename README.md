@@ -19,5 +19,6 @@ To get a local copy up and running, note the prerequisites and follow these step
 3. Copy and paste the following code into the terminal: git clone git@github.com:jayjay19630/magic-8-ball-app.git
 4. Run `cd magic-8-ball-app`
 5. Run `npm install`
+6. Run `cp .env.example .env` and add your own OpenAI API Key
 7. Run `npm run dev`
 8. Head over to http://localhost:5173/ to see the 8 ball in action!

@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   return {
     define: {
       'process.env.OPENAI_API_KEY': JSON.stringify(env.OPENAI_API_KEY),
-      'process.env.USING_BACKEND': JSON.stringify(env.BACKEND)
+      'process.env.USING_BACKEND': JSON.stringify(env.USING_BACKEND)
     },
     plugins: [react()],
   }

@@ -1,0 +1,13 @@
+.sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+    .sidebar-button {
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar-label {
+        padding-left: 10px;
+    }

@@ -7,7 +7,7 @@ interface IUserInput {
     query: string
   }
 
-export const UserInput = (props: { setIsShaking: Function, fetchQuery: Function }) => {
+export const UserInput = (props: { isShaking: boolean, setIsShaking: Function, fetchQuery: Function }) => {
 
     const { register, handleSubmit, formState: { errors }} = useForm<IUserInput>();
 
@@ -26,8 +26,9 @@ export const UserInput = (props: { setIsShaking: Function, fetchQuery: Function 
                     error={!!errors.query}
                     helperText={errors.query?.message}
                     style={{ width: 3000 }}
+                    disabled={props.isShaking}
                 />
-                <Button sx={{width:100, height: 50, backgroundColor: '#2c67f2'}} type='submit' variant='contained' disableTouchRipple>
+                <Button sx={{width:100, height: 50, backgroundColor: '#2c67f2'}} type='submit' variant='contained' disabled={props.isShaking} disableTouchRipple>
                     <QuestionAnswer/>
                 </Button>
             </Stack>

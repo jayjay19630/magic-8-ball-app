@@ -48,7 +48,7 @@ export const Home = () => {
       <div className='ball-container'>
         <SpeechBubble response={isShaking ? "..." : response}/>
         <EightBallSVG />
-        <UserInput setIsShaking={setIsShaking} fetchQuery={fetchQuery}/>
+        <UserInput isShaking={isShaking} setIsShaking={setIsShaking} fetchQuery={fetchQuery}/>
       </div>
     </div>
   )

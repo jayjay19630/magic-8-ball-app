@@ -2,6 +2,13 @@
 
 This app reimagines the traditional 8-ball fortune telling product into a AI-powered response generator! Users will need to enter a simple 'Yes' or 'No' question, to which the 8-ball will generate a customised response that predicts that answer to that question. The AI is implemented using OpenAI's free API and, through prompt engineering, creates specific responses just like an 8-ball would. The frontend is designed solely using React and Typescript, along with libraries such as Material UI and Framer Motion.
 
+## Features
+
+- **User authentication and registration:** Users can sign up for an account, authenticated by their username and password.
+- **Magic 8 Ball customisation:** Users can personalise their 8 balls with their own hats, accessories, colors, and more.
+- **Chat history:** Users can look back on previous queries and reminisce previous answers that they find interesting.
+- **Daily premonitions:** Users can receive daily recommendations regarding one of their past queries.
+
 ## Getting Started
 
 To get a local copy up and running, note the prerequisites and follow these steps.

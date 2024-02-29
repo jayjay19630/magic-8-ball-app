@@ -23,6 +23,8 @@ To get a local copy up and running, note the prerequisites and follow these step
 
 ### Instructions
 
+Here are the steps to run a local copy without customisation, chat history and daily premonition features.
+
 1. Open terminal
 2. Navigate to your desired location to place this repository
 3. Copy and paste the following code into the terminal: `git clone git@github.com:jayjay19630/magic-8-ball-app.git`
@@ -31,3 +33,9 @@ To get a local copy up and running, note the prerequisites and follow these step
 6. Run `cp .env.example .env` and add your own OpenAI API Key to the `.env` file
 7. Run `npm run dev`
 8. Head over to http://localhost:5173/ to see the 8 ball in action!
+
+If you would like to also use the backend, follow these instructions after setting up the configurations above.
+
+1. Head over to https://github.com/jayjay19630/magic-8-ball-backend and run your own copy of the backend (instructions for setup found there)
+2. Edit .env file in frontend so that `USING_BACKEND=TRUE`
+3. Refresh the page and customise your ball yourself!

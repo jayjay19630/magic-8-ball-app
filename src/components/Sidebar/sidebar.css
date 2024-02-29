@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap");
 
 .sidebar {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-    .drawer-container {
-        height: 100vh;
-        background: linear-gradient(90deg, rgb(118, 194, 245), #a9c6ea);
-    }
+.drawer-container {
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(118, 194, 245), #a9c6ea);
+}
 
-    .sidebar-button {
-        display: flex;
-        align-items: center;
-    }
+.sidebar-button {
+  display: flex;
+  align-items: center;
+}
 
-    .sidebar-label {
-        padding-left: 10px;
-    }
+.sidebar-label {
+  padding-left: 10px;
+}
 
-    .sidebar-header {
-        padding: 25px;
-        font-size: 24px;
-        font-weight: bold;
-        font-family: 'Space Grotesk', sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+.sidebar-header {
+  padding: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Space Grotesk", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

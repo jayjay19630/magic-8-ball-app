@@ -2,6 +2,8 @@
 
 This app reimagines the traditional 8-ball fortune telling product into a AI-powered response generator! Users will need to enter a simple 'Yes' or 'No' question, to which the 8-ball will generate a customised response that predicts that answer to that question. The AI is implemented using OpenAI's free API and, through prompt engineering, creates specific responses just like an 8-ball would. The frontend is designed solely using React and Typescript, along with libraries such as Material UI and Framer Motion.
 
+<img width="1419" alt="Screenshot 2024-02-29 at 8 36 59 PM" src="https://github.com/jayjay19630/magic-8-ball-frontend/assets/142368471/5d3b1a67-a474-4154-9b79-ff2f19704ce0">
+
 ## Features
 
 - **User authentication and registration:** Users can sign up for an account, authenticated by their username and password.

@@ -4,3 +4,8 @@
   padding: 10px;
   text-align: center;
 }
+
+.sidebar-and-profile {
+  display: flex;
+  justify-content: space-between;
+}

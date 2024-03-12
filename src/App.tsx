@@ -7,7 +7,7 @@ import Profile from "./components/ProfileIcon/ProfileIcon";
 import SignupButton from "./components/SignupButton/SignupButton";
 
 const usingBackend = process.env.USING_BACKEND == "TRUE" ? true : false;
-const isLoggedIn = true;
+const isLoggedIn = false;
 
 function App() {
   return (

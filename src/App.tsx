@@ -5,6 +5,7 @@ import { Home } from "./pages/Home/Home";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import Profile from "./components/ProfileIcon/ProfileIcon";
 import SignupButton from "./components/SignupButton/SignupButton";
+import LoginButton from "./components/LoginButton/LoginButton";
 
 const usingBackend = process.env.USING_BACKEND == "TRUE" ? true : false;
 const isLoggedIn = false;
@@ -18,7 +19,10 @@ function App() {
           {isLoggedIn ? (
             <Profile username={"Jonathan"}></Profile>
           ) : (
-            <SignupButton />
+            <div>
+              <SignupButton />
+              <LoginButton />
+            </div>
           )}
         </div>
       )}

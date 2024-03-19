@@ -13,6 +13,7 @@ interface IUserInput {
  */
 export const UserInput = (props: {
   isShaking: boolean;
+  isOpen: boolean;
   setIsShaking: (bool: boolean) => void;
   setResponse: (res: string) => void;
 }) => {
@@ -41,7 +42,7 @@ export const UserInput = (props: {
           error={!!errors.query}
           helperText={errors.query?.message}
           style={{ width: 3000 }}
-          disabled={props.isShaking}
+          disabled={props.isShaking || props.isOpen}
         />
         <Button
           sx={{
@@ -51,7 +52,7 @@ export const UserInput = (props: {
           }}
           type="submit"
           variant="contained"
-          disabled={props.isShaking}
+          disabled={props.isShaking || props.isOpen}
           disableTouchRipple
         >
           <QuestionAnswer />

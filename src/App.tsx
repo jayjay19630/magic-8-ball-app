@@ -31,7 +31,7 @@ function App() {
       )}
       <SignupCard open={isOpen} onClose={() => setIsOpen(false)}></SignupCard>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Home isOpen={isOpen} />}></Route>
       </Routes>
     </div>
   );

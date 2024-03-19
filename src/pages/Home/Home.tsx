@@ -5,7 +5,11 @@ import { SpeechBubble } from "../../components/home/SpeechBubble/SpeechBubble";
 import EightBallSVG from "../../components/home/EightBall/EightBallSVG";
 import { UserInput } from "../../components/home/UserInput/UserInput";
 
-export const Home = () => {
+type StateProps = {
+  isOpen: boolean;
+};
+
+export const Home: React.FunctionComponent<StateProps> = (props) => {
   const [response, setResponse] = useState(
     "Ask your question and the magic eightball will reveal its mysterious wisdom."
   );
@@ -19,6 +23,7 @@ export const Home = () => {
         <EightBallSVG />
         <UserInput
           isShaking={isShaking}
+          isOpen={props.isOpen}
           setIsShaking={setIsShaking}
           setResponse={setResponse}
         />

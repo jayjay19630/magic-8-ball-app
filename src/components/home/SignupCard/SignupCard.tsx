@@ -9,10 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import "./signup-card.css";
-import { Close } from "@mui/icons-material";
+import { Close, Person } from "@mui/icons-material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { postSignup } from "../../../utils/SignupAndLogin/Signup";
-import { useState } from "react";
 
 type StateProps = {
   open: boolean;
@@ -24,11 +23,14 @@ interface ISignupInput {
   password: string;
 }
 
+/**
+ * Signup popup component that has form to create new user details
+ */
 const SignupCard: React.FunctionComponent<StateProps> = (props) => {
+  // Render nothing if popup state is not open
   if (!props.open) return null;
 
-  const [alreadyTakenError, setAlreadyTakenError] = useState(false);
-
+  // Creating a form with specified inputs ISignupInput
   const {
     register,
     handleSubmit,
@@ -36,9 +38,10 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
   } = useForm<ISignupInput>();
 
   const handleSignup: SubmitHandler<ISignupInput> = (data: ISignupInput) => {
-    postSignup(data.username, data.password, () => console.log("hello"));
+    postSignup(data.username, data.password);
   };
 
+  // Fixed position of popup in centre of page. Overlay to dim background as popup appears
   return (
     <Card
       sx={{
@@ -63,6 +66,9 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
         </Typography>
         <form onSubmit={handleSubmit(handleSignup)}>
           <Stack spacing={3}>
+            <div className="icon-container">
+              <Person sx={{ fontSize: 50 }}></Person>
+            </div>
             <TextField
               type="signup"
               {...register("username", { required: "Username is required!" })}
@@ -77,22 +83,22 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
               error={!!errors.password}
               helperText={errors.password?.message}
             ></TextField>
-            <div className="button-container">
-              <Button
-                sx={{
-                  width: 100,
-                  height: 50,
-                  backgroundColor: "#3b8ad8",
-                }}
-                type="submit"
-                variant="contained"
-                disableTouchRipple
-              >
-                <Typography sx={{ fontSize: 15, fontWeight: "bold" }}>
-                  Sign Up
-                </Typography>
-              </Button>
-            </div>
+            <Button
+              sx={{
+                width: 470,
+                alignSelf: "center",
+                height: 40,
+                backgroundColor: "#3b8ad8",
+              }}
+              type="submit"
+              variant="contained"
+              disableTouchRipple
+            >
+              <Typography sx={{ fontSize: 15, fontWeight: "bold" }}>
+                Sign Up
+              </Typography>
+            </Button>
+            <Typography>Already have an account? Login!</Typography>
           </Stack>
         </form>
       </CardContent>

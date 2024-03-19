@@ -1,12 +1,8 @@
+import { toast } from "react-toastify";
 import BACKEND_URL from "../BackendURL";
 
-export const postSignup = (
-  username: string,
-  password: string,
-  alreadyTakenHandler: Function
-) => {
-  const setAlreadyTakenError = alreadyTakenHandler;
-
+// Backend API call to register a new user
+export const postSignup = (username: string, password: string) => {
   return fetch(`${BACKEND_URL}/users`, {
     method: "POST",
     headers: {
@@ -20,8 +16,14 @@ export const postSignup = (
     }),
   })
     .then((response) => {
+      // Returns bad input error if username is already taken or if
+      // not connected. Creates corresponding notification message.
       if (response.status === 422) {
-        setAlreadyTakenError(true);
+        toast.error("Username already taken!");
+        return;
+      } else if (response.status === 404) {
+        toast.warn("You are not connected. Please check internet...");
+        return;
       }
       return response.json();
     })

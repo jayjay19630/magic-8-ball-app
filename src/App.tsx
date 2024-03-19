@@ -2,12 +2,12 @@ import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
-import { Sidebar } from "./components/Sidebar/Sidebar";
-import Profile from "./components/ProfileIcon/ProfileIcon";
-import SignupButton from "./components/SignupButton/SignupButton";
-import LoginButton from "./components/LoginButton/LoginButton";
+import { Sidebar } from "./components/general/Sidebar/Sidebar";
+import Profile from "./components/general/ProfileIcon/ProfileIcon";
+import SignupButton from "./components/general/SignupButton/SignupButton";
+import LoginButton from "./components/general/LoginButton/LoginButton";
 import { useState } from "react";
-import SignupCard from "./components/SignupCard/SignupCard";
+import SignupCard from "./components/home/SignupCard/SignupCard";
 
 const usingBackend = process.env.USING_BACKEND == "TRUE" ? true : false;
 

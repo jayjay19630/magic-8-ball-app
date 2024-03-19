@@ -11,7 +11,8 @@ import {
 import "./signup-card.css";
 import { Close } from "@mui/icons-material";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { postSignup } from "../../utils/SignupAndLogin/Signup";
+import { postSignup } from "../../../utils/SignupAndLogin/Signup";
+import { useState } from "react";
 
 type StateProps = {
   open: boolean;
@@ -25,6 +26,8 @@ interface ISignupInput {
 
 const SignupCard: React.FunctionComponent<StateProps> = (props) => {
   if (!props.open) return null;
+
+  const [alreadyTakenError, setAlreadyTakenError] = useState(false);
 
   const {
     register,
@@ -47,7 +50,6 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
         left: "50%",
         transform: "translate(-50%, -50%)",
         zIndex: 1,
-        height: 600,
       }}
     >
       <CardActions>
@@ -56,11 +58,11 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
         </IconButton>
       </CardActions>
       <CardContent>
-        <Typography sx={{ fontWeight: "bold", fontSize: 20 }}>
+        <Typography sx={{ fontWeight: "bold", fontSize: 30, marginBottom: 2 }}>
           Create Your Account!
         </Typography>
         <form onSubmit={handleSubmit(handleSignup)}>
-          <Stack>
+          <Stack spacing={3}>
             <TextField
               type="signup"
               {...register("username", { required: "Username is required!" })}
@@ -75,16 +77,22 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
               error={!!errors.password}
               helperText={errors.password?.message}
             ></TextField>
-            <Button
-              sx={{
-                width: 100,
-                height: 50,
-                backgroundColor: "#2c67f2",
-              }}
-              type="submit"
-              variant="contained"
-              disableTouchRipple
-            ></Button>
+            <div className="button-container">
+              <Button
+                sx={{
+                  width: 100,
+                  height: 50,
+                  backgroundColor: "#3b8ad8",
+                }}
+                type="submit"
+                variant="contained"
+                disableTouchRipple
+              >
+                <Typography sx={{ fontSize: 15, fontWeight: "bold" }}>
+                  Sign Up
+                </Typography>
+              </Button>
+            </div>
           </Stack>
         </form>
       </CardContent>

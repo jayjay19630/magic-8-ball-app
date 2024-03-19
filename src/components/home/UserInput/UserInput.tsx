@@ -2,6 +2,7 @@ import { Button, Stack, TextField } from "@mui/material";
 import "./UserInput.css";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { QuestionAnswer } from "@mui/icons-material";
+import { fetchQuery } from "../../../utils/FetchQuery";
 
 interface IUserInput {
   query: string;
@@ -9,8 +10,8 @@ interface IUserInput {
 
 export const UserInput = (props: {
   isShaking: boolean;
-  setIsShaking: Function;
-  fetchQuery: Function;
+  setIsShaking: (bool: boolean) => void;
+  setResponse: (res: string) => void;
 }) => {
   const {
     register,
@@ -22,7 +23,7 @@ export const UserInput = (props: {
     query: string;
   }) => {
     props.setIsShaking(true);
-    props.fetchQuery(data.query);
+    fetchQuery(data.query, props.setResponse, props.setIsShaking);
   };
 
   return (
@@ -42,7 +43,6 @@ export const UserInput = (props: {
             width: 100,
             height: 50,
             backgroundColor: "#2c67f2",
-            zIndex: -1,
           }}
           type="submit"
           variant="contained"

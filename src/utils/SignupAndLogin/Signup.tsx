@@ -1,6 +1,10 @@
 import BACKEND_URL from "../BackendURL";
 
-export const postSignup = (username: string, alreadyTakenHandler: Function) => {
+export const postSignup = (
+  username: string,
+  password: string,
+  alreadyTakenHandler: Function
+) => {
   const setAlreadyTakenError = alreadyTakenHandler;
 
   return fetch(`${BACKEND_URL}/users`, {
@@ -11,6 +15,7 @@ export const postSignup = (username: string, alreadyTakenHandler: Function) => {
     body: JSON.stringify({
       user: {
         username: username,
+        password: password,
       },
     }),
   })

@@ -8,11 +8,15 @@ interface IUserInput {
   query: string;
 }
 
+/**
+ * User Input component which receives user query and fetches response from OpenAI
+ */
 export const UserInput = (props: {
   isShaking: boolean;
   setIsShaking: (bool: boolean) => void;
   setResponse: (res: string) => void;
 }) => {
+  // Initialise form details and submit callback
   const {
     register,
     handleSubmit,
@@ -26,6 +30,7 @@ export const UserInput = (props: {
     fetchQuery(data.query, props.setResponse, props.setIsShaking);
   };
 
+  // Form to receive and submit query information
   return (
     <form onSubmit={handleSubmit(handleQuerySubmit)}>
       <Stack spacing={2} width={700} direction={"row"} sx={{ zIndex: -1 }}>

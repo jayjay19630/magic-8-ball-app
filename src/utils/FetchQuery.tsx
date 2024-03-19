@@ -1,11 +1,13 @@
 import OpenAI from "openai";
 import { toast } from "react-toastify";
 
+// Returns response from OpenAI through API call
 export async function fetchQuery(
   query: string,
   setResponse: (res: string) => void,
   setIsShaking: (bool: boolean) => void
 ) {
+  // Initialises openAI
   const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
@@ -38,6 +40,7 @@ export async function fetchQuery(
     await setResponse(response);
     await setIsShaking(false);
   } catch (error: any) {
+    // If there is a connection error, then trigger a warning and reset home page
     toast.warn("You are not connected. Please check internet...");
     setResponse(
       "Ask your question and the magic eightball will reveal its mysterious wisdom."

@@ -65,6 +65,9 @@ const SidebarHeader = (props: { setOpenHandler: Function }) => {
   );
 };
 
+/**
+ * Sidebar component with links to various pages in the website
+ */
 export const Sidebar = () => {
   const [open, setOpen] = useState(false);
   return (

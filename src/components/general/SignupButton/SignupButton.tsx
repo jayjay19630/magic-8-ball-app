@@ -6,6 +6,7 @@ type StateProps = {
   onClick: () => void;
 };
 
+// Sign Up button component in top menu bar
 const SignupButton: React.FunctionComponent<StateProps> = (props) => {
   return (
     <Button className="signup-button" onClick={props.onClick}>

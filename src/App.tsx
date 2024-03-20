@@ -74,10 +74,18 @@ function App() {
       )}
       {}
       {isOpen && popupType === PopUpType.SIGNUP && (
-        <SignupCard open={isOpen} onClose={handleClose}></SignupCard>
+        <SignupCard
+          open={isOpen}
+          onClose={handleClose}
+          setPopupType={setPopupType}
+        ></SignupCard>
       )}
       {isOpen && popupType === PopUpType.LOGIN && (
-        <LoginCard open={isOpen} onClose={handleClose}></LoginCard>
+        <LoginCard
+          open={isOpen}
+          onClose={handleClose}
+          setPopupType={setPopupType}
+        ></LoginCard>
       )}
       <Routes>
         <Route path="/" element={<Home isOpen={isOpen} />}></Route>

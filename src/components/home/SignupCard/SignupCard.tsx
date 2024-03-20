@@ -13,9 +13,16 @@ import { Close, Person } from "@mui/icons-material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { postSignup } from "../../../utils/SignupAndLogin/Signup";
 
+enum PopUpType {
+  SIGNUP = 0,
+  LOGIN = 1,
+  NULL = 2,
+}
+
 type StateProps = {
   open: boolean;
   onClose: () => void;
+  setPopupType: (type: PopUpType) => void;
 };
 
 interface ISignupInput {
@@ -98,7 +105,12 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
                 Sign Up
               </Typography>
             </Button>
-            <Typography>Already have an account? Login!</Typography>
+            <Typography>
+              Already have an account?{" "}
+              <button onClick={() => props.setPopupType(PopUpType.LOGIN)}>
+                Login!
+              </button>
+            </Typography>
           </Stack>
         </form>
       </CardContent>

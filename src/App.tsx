@@ -13,15 +13,23 @@ import LoginCard from "./components/home/LoginCard/LoginCard";
 const usingBackend = process.env.USING_BACKEND == "TRUE" ? true : false;
 
 enum PopUpType {
-  "SIGNUP",
-  "LOGIN",
-  "NULL",
+  SIGNUP = 0,
+  LOGIN = 1,
+  NULL = 2,
+}
+
+export enum CurrentPage {
+  HOME = 0,
+  CHATHISTORY = 1,
+  PREDICTION = 2,
+  PROFILE = 3,
 }
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [popupType, setPopupType] = useState<PopUpType>(PopUpType.NULL);
-  const isLoggedIn = true;
+  const [currentPage, setCurrentPage] = useState<CurrentPage>(CurrentPage.HOME);
+  const isLoggedIn = false;
 
   const handleSignupOpen = () => {
     setPopupType(PopUpType.SIGNUP);
@@ -42,7 +50,11 @@ function App() {
     <div className={!isOpen ? "background-default" : "background-overlay"}>
       {usingBackend && (
         <div className="sidebar-and-profile">
-          <Sidebar></Sidebar>
+          <Sidebar
+            handleLoginOpen={handleLoginOpen}
+            isLoggedIn={isLoggedIn}
+            currentPage={currentPage}
+          ></Sidebar>
           {isLoggedIn ? (
             <Profile username={"Jonathan"}></Profile>
           ) : (

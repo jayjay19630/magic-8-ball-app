@@ -8,7 +8,7 @@
 
 .drawer-container {
   height: 100vh;
-  background: linear-gradient(90deg, rgb(118, 194, 245), #a9c6ea);
+  background-color: #f0f5fb;
 }
 
 .sidebar-button {
@@ -19,7 +19,7 @@
 .sidebar-label {
   padding-left: 10px;
   font-weight: bold;
-  color: rgb(24, 55, 76);
+  color: rgb(66, 69, 71);
 }
 
 .sidebar-header {

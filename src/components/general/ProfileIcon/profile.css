@@ -1,6 +1,7 @@
 .profile-icon {
   display: flex;
   align-items: center;
+  padding-right: 50px;
 
   .person-icon {
     font-size: 40px;

@@ -9,10 +9,10 @@ type ProfileProps = {
 const Profile: React.FunctionComponent<ProfileProps> = (props) => {
   return (
     <div className="profile-icon">
+      <div className="username">{props.username}</div>
       <IconButton>
         <Person className="person-icon"></Person>
       </IconButton>
-      <div className="username">{props.username}</div>
     </div>
   );
 };

@@ -21,7 +21,7 @@ enum PopUpType {
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [popupType, setPopupType] = useState<PopUpType>(PopUpType.NULL);
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   const handleSignupOpen = () => {
     setPopupType(PopUpType.SIGNUP);

@@ -18,7 +18,7 @@ enum PopUpType {
   NULL = 2,
 }
 
-export enum CurrentPage {
+enum CurrentPage {
   HOME = 0,
   CHATHISTORY = 1,
   PREDICTION = 2,
@@ -26,11 +26,17 @@ export enum CurrentPage {
 }
 
 function App() {
+  // States to detect when signup popup appears along with its corresponding type
   const [isOpen, setIsOpen] = useState(false);
   const [popupType, setPopupType] = useState<PopUpType>(PopUpType.NULL);
+
+  // State to detect current page
   const [currentPage, setCurrentPage] = useState<CurrentPage>(CurrentPage.HOME);
+
+  // Uses fetch call to check whethere user is logged in
   const isLoggedIn = false;
 
+  // Handler functions to deal with opening popups.
   const handleSignupOpen = () => {
     setPopupType(PopUpType.SIGNUP);
     setIsOpen(true);
@@ -46,6 +52,7 @@ function App() {
     setPopupType(PopUpType.NULL);
   };
 
+  // Div component with menu bar and corresponding page component
   return (
     <div className={!isOpen ? "background-default" : "background-overlay"}>
       {usingBackend && (

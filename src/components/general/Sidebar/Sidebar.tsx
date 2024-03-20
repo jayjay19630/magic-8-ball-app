@@ -16,7 +16,13 @@ import {
   Menu,
   Person,
 } from "@mui/icons-material";
-import { CurrentPage } from "../../../App";
+
+enum CurrentPage {
+  HOME = 0,
+  CHATHISTORY = 1,
+  PREDICTION = 2,
+  PROFILE = 3,
+}
 
 interface sidebarItem {
   label: string;

@@ -1,11 +1,7 @@
+import { toast } from "react-toastify";
 import BACKEND_URL from "../BackendURL";
 
-export const postLogin = (
-  username: string,
-  invalidUsernameHandler: Function
-) => {
-  const setInvalidUsernameError = invalidUsernameHandler;
-
+export const postLogin = (username: string, password: string) => {
   return fetch(`${BACKEND_URL}/login`, {
     method: "POST",
     headers: {
@@ -14,12 +10,19 @@ export const postLogin = (
     body: JSON.stringify({
       user: {
         username: username,
+        password: password,
       },
     }),
   })
     .then((response) => {
+      // Returns bad input error if password is incorrect or if
+      // not connected. Creates corresponding notification message.
       if (response.status === 422) {
-        setInvalidUsernameError(true);
+        toast.error("Password is incorrect !");
+        return;
+      } else if (response.status === 404) {
+        toast.warn("You are not connected. Please check internet...");
+        return;
       }
       return response.json();
     })

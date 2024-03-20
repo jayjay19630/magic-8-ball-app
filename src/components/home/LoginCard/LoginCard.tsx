@@ -8,7 +8,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import "./signup-card.css";
 import { Close, Person } from "@mui/icons-material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { postLogin } from "../../../utils/SignupAndLogin/Login";
@@ -26,7 +25,7 @@ interface ILoginInput {
 /**
  * Login popup component that has form to create new user details
  */
-const SignupCard: React.FunctionComponent<StateProps> = (props) => {
+const LoginCard: React.FunctionComponent<StateProps> = (props) => {
   // Render nothing if popup state is not open
   if (!props.open) return null;
 
@@ -37,7 +36,7 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
     formState: { errors },
   } = useForm<ILoginInput>();
 
-  const handleSignup: SubmitHandler<ILoginInput> = (data: ILoginInput) => {
+  const handleLogin: SubmitHandler<ILoginInput> = (data: ILoginInput) => {
     postLogin(data.username, data.password);
   };
 
@@ -64,7 +63,7 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
         <Typography sx={{ fontWeight: "bold", fontSize: 30, marginBottom: 2 }}>
           Login To Your Account!
         </Typography>
-        <form onSubmit={handleSubmit(handleSignup)}>
+        <form onSubmit={handleSubmit(handleLogin)}>
           <Stack spacing={3}>
             <div className="icon-container">
               <Person sx={{ fontSize: 50 }}></Person>
@@ -95,7 +94,7 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
               disableTouchRipple
             >
               <Typography sx={{ fontSize: 15, fontWeight: "bold" }}>
-                Sign Up
+                Login
               </Typography>
             </Button>
             <Typography>Don't Have An Account? Sign Up!</Typography>
@@ -106,4 +105,4 @@ const SignupCard: React.FunctionComponent<StateProps> = (props) => {
   );
 };
 
-export default SignupCard;
+export default LoginCard;

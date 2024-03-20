@@ -3,9 +3,13 @@ import "./loginbutton.css";
 import { Button } from "@mui/material";
 import { Login } from "@mui/icons-material";
 
-const LoginButton: React.FunctionComponent = () => {
+type StateProps = {
+  onClick: () => void;
+};
+
+const LoginButton: React.FunctionComponent<StateProps> = (props) => {
   return (
-    <Button className="login-button">
+    <Button onClick={props.onClick} className="login-button">
       <Login></Login>
       <div>Login</div>
     </Button>

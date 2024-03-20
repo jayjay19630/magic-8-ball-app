@@ -8,12 +8,36 @@ import SignupButton from "./components/general/SignupButton/SignupButton";
 import LoginButton from "./components/general/LoginButton/LoginButton";
 import { useState } from "react";
 import SignupCard from "./components/home/SignupCard/SignupCard";
+import LoginCard from "./components/home/LoginCard/LoginCard";
 
 const usingBackend = process.env.USING_BACKEND == "TRUE" ? true : false;
 
+enum PopUpType {
+  "SIGNUP",
+  "LOGIN",
+  "NULL",
+}
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [popupType, setPopupType] = useState<PopUpType>(PopUpType.NULL);
   const isLoggedIn = false;
+
+  const handleSignupOpen = () => {
+    setPopupType(PopUpType.SIGNUP);
+    setIsOpen(true);
+  };
+
+  const handleLoginOpen = () => {
+    setPopupType(PopUpType.LOGIN);
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setPopupType(PopUpType.NULL);
+  };
+
   return (
     <div className={!isOpen ? "background-default" : "background-overlay"}>
       {usingBackend && (
@@ -23,13 +47,19 @@ function App() {
             <Profile username={"Jonathan"}></Profile>
           ) : (
             <div>
-              <SignupButton onClick={() => setIsOpen(true)} />
-              <LoginButton />
+              <SignupButton onClick={handleSignupOpen} />
+              <LoginButton onClick={handleLoginOpen} />
             </div>
           )}
         </div>
       )}
-      <SignupCard open={isOpen} onClose={() => setIsOpen(false)}></SignupCard>
+      {}
+      {isOpen && popupType === PopUpType.SIGNUP && (
+        <SignupCard open={isOpen} onClose={handleClose}></SignupCard>
+      )}
+      {isOpen && popupType === PopUpType.LOGIN && (
+        <LoginCard open={isOpen} onClose={handleClose}></LoginCard>
+      )}
       <Routes>
         <Route path="/" element={<Home isOpen={isOpen} />}></Route>
       </Routes>

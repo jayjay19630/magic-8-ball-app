@@ -20,7 +20,7 @@ export const Home: React.FunctionComponent<StateProps> = (props) => {
       <Heading />
       <div className="ball-container">
         <SpeechBubble response={isShaking ? "..." : response} />
-        <EightBallSVG />
+        <EightBallSVG isShaking={isShaking} />
         <UserInput
           isShaking={isShaking}
           isOpen={props.isOpen}

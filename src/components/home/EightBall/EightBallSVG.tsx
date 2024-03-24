@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 
 //SVG component for moving 8 ball with framer motion
-const EightBallSVG = () => (
+const EightBallSVG = (props: { isShaking: boolean }) => (
   <motion.svg
-    animate={{ y: [-40, 0, -40] }}
+    animate={{
+      x: props.isShaking
+        ? [0, -80, 80, -80, 80, -80, 80, -80, 80, -80, 0]
+        : [0],
+      y: [-40, 0, -40],
+    }}
     transition={{
-      times: [0, 1],
-      duration: 5,
+      times: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+      duration: 3,
       repeat: Infinity,
       type: "keyframes",
       ease: "easeInOut",

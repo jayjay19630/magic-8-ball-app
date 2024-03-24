@@ -16,12 +16,13 @@ import {
   Menu,
   Person,
 } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 enum CurrentPage {
-  HOME = 0,
-  CHATHISTORY = 1,
-  PREDICTION = 2,
-  PROFILE = 3,
+  HOME = "",
+  CHATHISTORY = "chathistory",
+  PREDICTION = "prediction",
+  PROFILE = "profile",
 }
 
 interface sidebarItem {
@@ -70,6 +71,9 @@ export const Sidebar = (props: {
   const isLoggedIn = props.isLoggedIn;
   const setCurrentPage = props.setCurrentPage;
 
+  // Navigate hook
+  const navigate = useNavigate();
+
   const handleLogin = () => {
     handleLoginOpen();
     setOpen(false);
@@ -88,7 +92,10 @@ export const Sidebar = (props: {
               ? props.pageType === currentPage
                 ? handleLoginDefault
                 : handleLogin
-              : () => setCurrentPage(props.pageType)
+              : () => {
+                  setCurrentPage(props.pageType);
+                  navigate(`/${props.pageType}`);
+                }
           }
         >
           <div className="sidebar-button">

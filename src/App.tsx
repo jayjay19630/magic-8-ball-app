@@ -20,10 +20,10 @@ enum PopUpType {
 }
 
 enum CurrentPage {
-  HOME = 0,
-  CHATHISTORY = 1,
-  PREDICTION = 2,
-  PROFILE = 3,
+  HOME = "",
+  CHATHISTORY = "chathistory",
+  PREDICTION = "prediction",
+  PROFILE = "profile",
 }
 
 function App() {

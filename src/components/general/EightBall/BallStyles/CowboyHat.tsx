@@ -10,7 +10,7 @@ export const CowboyHat = () => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
   >
-    <g transform="translate(5, -48)">
+    <g transform="translate(5, -46)">
       <path
         className="st2"
         d="M66.3,85.6c-0.6-0.4-1.4-0.3-2,0.1c-0.6,0.4-0.8,0.9-0.9,1.6c0.2,0.5,0.4,1,0.9,1.3c0.5,0.4,1.3,0.6,2,0.3   C67.4,88.4,67.3,86.3,66.3,85.6z"

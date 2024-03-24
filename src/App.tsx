@@ -9,6 +9,7 @@ import LoginButton from "./components/general/LoginButton/LoginButton";
 import { useState } from "react";
 import SignupCard from "./components/home/SignupCard/SignupCard";
 import LoginCard from "./components/home/LoginCard/LoginCard";
+import { ProfilePage } from "./pages/Profile/Profile";
 
 const usingBackend = process.env.USING_BACKEND == "TRUE" ? true : false;
 
@@ -34,7 +35,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState<CurrentPage>(CurrentPage.HOME);
 
   // Uses fetch call to check whethere user is logged in
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   // Handler functions to deal with opening popups.
   const handleSignupOpen = () => {
@@ -61,6 +62,7 @@ function App() {
             handleLoginOpen={handleLoginOpen}
             isLoggedIn={isLoggedIn}
             currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
           ></Sidebar>
           {isLoggedIn ? (
             <Profile username={"Jonathan"}></Profile>
@@ -89,6 +91,7 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home isOpen={isOpen} />}></Route>
+        <Route path="/profile" element={<ProfilePage />}></Route>
       </Routes>
     </div>
   );

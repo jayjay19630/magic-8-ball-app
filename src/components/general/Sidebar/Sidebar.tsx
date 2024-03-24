@@ -61,12 +61,14 @@ export const Sidebar = (props: {
   handleLoginOpen: () => void;
   isLoggedIn: boolean;
   currentPage: CurrentPage;
+  setCurrentPage: (currentPage: CurrentPage) => void;
 }) => {
   // State to detect when the side bar menu is open
   const [open, setOpen] = useState(false);
   const handleLoginOpen = props.handleLoginOpen;
   const currentPage = props.currentPage;
   const isLoggedIn = props.isLoggedIn;
+  const setCurrentPage = props.setCurrentPage;
 
   const handleLogin = () => {
     handleLoginOpen();
@@ -86,7 +88,7 @@ export const Sidebar = (props: {
               ? props.pageType === currentPage
                 ? handleLoginDefault
                 : handleLogin
-              : () => {}
+              : () => setCurrentPage(props.pageType)
           }
         >
           <div className="sidebar-button">

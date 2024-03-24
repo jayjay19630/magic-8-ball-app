@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./home.css";
 import { Heading } from "../../components/home/Heading/Heading";
 import { SpeechBubble } from "../../components/home/SpeechBubble/SpeechBubble";
-import EightBallSVG from "../../components/home/EightBall/EightBallSVG";
+import EightBallSVG from "../../components/general/EightBall/EightBallSVG";
 import { UserInput } from "../../components/home/UserInput/UserInput";
 
 type StateProps = {

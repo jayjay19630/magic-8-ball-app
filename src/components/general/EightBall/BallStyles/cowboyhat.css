@@ -1,0 +1,22 @@
+.cowboy {
+  z-index: 10000;
+}
+
+.st0 {
+  fill: #593522;
+}
+
+.st1 {
+  fill: none;
+}
+
+.st2 {
+  fill: #84561a;
+}
+
+.st0,
+.st1,
+.st2 {
+  z-index: 10;
+  stroke-width: 10;
+}

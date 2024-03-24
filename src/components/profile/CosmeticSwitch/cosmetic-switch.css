@@ -1,0 +1,12 @@
+.cosmetic-switch {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hat-type-label {
+  color: #000000;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+}

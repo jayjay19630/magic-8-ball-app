@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
+import { CowboyHat } from "./BallStyles/CowboyHat";
+
+enum HatType {
+  "None",
+  "Cowboy",
+  "Magician",
+  "Cap",
+}
 
 //SVG component for moving 8 ball with framer motion
-const EightBallSVG = (props: { isShaking: boolean }) => (
+const EightBallSVG = (props: { isShaking: boolean; hatType: HatType }) => (
   <motion.svg
     animate={{
       x: props.isShaking
@@ -17,7 +25,7 @@ const EightBallSVG = (props: { isShaking: boolean }) => (
       ease: "easeInOut",
     }}
     xmlns="http://www.w3.org/2000/svg"
-    height={300}
+    height={400}
     width={300}
     viewBox="0 0 72 72"
   >
@@ -40,6 +48,7 @@ const EightBallSVG = (props: { isShaking: boolean }) => (
       <circle cx={36} cy={32.595} r={3.363} />
       <circle cx={36} cy={40.31} r={4.352} />
     </g>
+    {props.hatType === HatType.Cowboy && <CowboyHat></CowboyHat>}
   </motion.svg>
 );
 export default EightBallSVG;

@@ -1,5 +1,5 @@
 import { toast } from "react-toastify";
-import BACKEND_URL from "./BackendURL";
+import BACKEND_URL from "../BackendURL";
 
 export const getProfile = () => {
   return fetch(`${BACKEND_URL}/profile`, {

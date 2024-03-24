@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { CowboyHat } from "./BallStyles/CowboyHat";
+import { CowboyHat } from "./BallStyles/Cowboy/CowboyHat";
 
 enum HatType {
   "None",
   "Cowboy",
   "Magician",
-  "Cap",
 }
 
 //SVG component for moving 8 ball with framer motion
@@ -25,7 +24,7 @@ const EightBallSVG = (props: { isShaking: boolean; hatType: HatType }) => (
       ease: "easeInOut",
     }}
     xmlns="http://www.w3.org/2000/svg"
-    height={400}
+    height={300}
     width={300}
     viewBox="0 0 72 72"
   >

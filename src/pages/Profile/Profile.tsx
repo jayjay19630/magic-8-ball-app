@@ -8,13 +8,12 @@ enum HatType {
   "None",
   "Cowboy",
   "Magician",
-  "Cap",
 }
 export const ProfilePage = () => {
   const [hatType, setHatType] = useState<HatType>(HatType.None);
 
   const handleSwitchRight = () => {
-    if (hatType == 3) {
+    if (hatType == 2) {
       setHatType(HatType.None);
     } else {
       setHatType(hatType + 1);
@@ -23,7 +22,7 @@ export const ProfilePage = () => {
 
   const handleSwitchLeft = () => {
     if (hatType == 0) {
-      setHatType(HatType.Cap);
+      setHatType(HatType.Magician);
     } else {
       setHatType(hatType - 1);
     }

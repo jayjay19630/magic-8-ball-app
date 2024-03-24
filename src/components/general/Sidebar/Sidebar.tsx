@@ -8,20 +8,12 @@ import {
   ListItem,
   ListItemButton,
 } from "@mui/material";
-import {
-  Chat,
-  Close,
-  Home,
-  Lightbulb,
-  Menu,
-  Person,
-} from "@mui/icons-material";
+import { Chat, Close, Home, Menu, Person } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 enum CurrentPage {
   HOME = "",
   CHATHISTORY = "chathistory",
-  PREDICTION = "prediction",
   PROFILE = "profile",
 }
 
@@ -42,11 +34,6 @@ const sidebarItems = [
     label: "Chat History",
     pageType: CurrentPage.CHATHISTORY,
     icon: <Chat></Chat>,
-  },
-  {
-    label: "Daily Prediction",
-    pageType: CurrentPage.PREDICTION,
-    icon: <Lightbulb></Lightbulb>,
   },
   {
     label: "Profile",
